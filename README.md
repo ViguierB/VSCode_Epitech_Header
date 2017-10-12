@@ -1,6 +1,6 @@
-# epi-header README
+# epiheader README
 
-This is the README for your extension "epi-header". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "epiheader". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
