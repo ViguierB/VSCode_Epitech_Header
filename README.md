@@ -5,8 +5,8 @@ Avec ça tu vas pouvoir... euhhh uai non oublie, tu pourras juste mettre ton hea
 
 ## Features
 
-ctrl+alt+h sur Linux/Windows
-cmd+alt+h sur MacOs
+* ctrl+alt+h sur Linux/Windows
+* cmd+alt+h sur MacOs
 
 ## Extension Settings
 
