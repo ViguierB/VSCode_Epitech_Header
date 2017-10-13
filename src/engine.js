@@ -3,15 +3,13 @@ var vscode = require('vscode');
 var moment = require('moment');
 
 const headerPattern = `
- $FILE_NAME for $PROJET_NAME in $PWD
+ $FILE_NAME for $PROJECT_NAME in $PWD
 
  Made by $NAME
  Login   <$EMAIL>
 
  Started on  $STARTED_ON
- Last update $LAST_UPDATE
-
-`.substring(1);
+ Last update $LAST_UPDATE`.substring(1);
 
 var _extractEpiHeader = (text, delims) => {
     var lines = text.split('\n');
@@ -45,19 +43,14 @@ var _generateHeader = (fileName, delims, projectName) => {
                                 .replace('$PWD', path.dirname(fileName))
                                 .replace('$NAME', getUserName())
                                 .replace('$EMAIL', getUserEmail())
-                                .replace('$STARTED_ON', newDate + " " + getUserName())
-                                .replace('$LAST_UPDATE', newDate + " " + getUserName()).split('\n');
-    var header = "";
-    for (var i = 0; i <= 8; i++) {
-        if (i === 0) {
-            splited[i] = delims[0];
-        } else if (i === 8) {
-            splited[i] = delims[2];
-        } else {
-            splited[i] = delims[1] + splited[i];
-        }
-        header += splited[i];
+                                .replace('$STARTED_ON', nowDate + " " + getUserName())
+                                .replace('$LAST_UPDATE', nowDate + " " + getUserName())
+                                .split("\n");
+    var header = delims[0] + "\n";
+    for (var i = 0; i < splited.length; i++) {
+        header += delims[1] + splited[i] + "\n";
     }
+    header += delims[2] + "\n";
     return header;
 };
 
@@ -66,10 +59,10 @@ var _insertHeader = (document, delims, projectName) => {
 
     var generatedHeader = _generateHeader(document.fileName, delims, projectName);
 
-}
+
+};
 
 var _updateEpiHeader = (editor, delims) => {
-
     return editor.replace(new vscode.Range(7, 0, 7, 9999), delims[1] + ' Last update ' + getCurrentDate() + " " + getUserName());
 };
 

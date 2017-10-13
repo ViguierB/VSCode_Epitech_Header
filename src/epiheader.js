@@ -20,9 +20,22 @@ var addHeader = () => {
     var active = vscode.window.activeTextEditor;
     var document = active.document;
 
-    var delims = delims.getDelims(document.languageId);
+    var delim = delims.getDelim(document.languageId);
     if (typeof delim !== 'undefined') {
-        var extracted = engine.extractEpiHeader(document.getText(), delims.getDelim(document.languageId));
+        var extracted = engine.extractEpiHeader(document.getText(), delim);
+        vscode.window.showInputBox({prompt: 'Pour quel projet ?'}).then((projectName) => {
+            if (!projectName) {
+                return;
+            }
+            var newHeader = engine.generateHeader(document.fileName, delim, projectName);
+            active.edit(editor => {
+                if (typeof extracted === 'undefined') {
+                    editor.insert(new vscode.Position(0, 0), newHeader + "\n");
+                } else {
+                    editor.replace(new vscode.Range(0, 0, 9, 0), newHeader);
+                }
+            });
+        });
         
     } else {
         vscode.window.showInformationMessage(
