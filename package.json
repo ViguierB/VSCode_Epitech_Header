@@ -1,70 +1,70 @@
 {
-  "name": "epiheader",
-  "displayName": "EpiHeader",
-  "description": "Header Epitech for VSCode",
-  "version": "0.0.3",
-  "publisher": "ben",
-  "icon": "epitech_logo.png",
-  "engines": {
-    "vscode": "^1.10.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./src/epiheader.js",
-  "contributes": {
-    "configuration": {
-      "properties": {
-        "EpiHeader.name": {
-          "type": "string",
-          "description": "Ton nom (Xxxxxx Zzzzzz)"
-        },
-        "EpiHeader.email": {
-          "type": "string",
-          "description": "Ton email (xxxxx.zzzzz@epitech.eu)"
-        },
-        "EpiHeader.experimental": {
-          "type": "boolean",
-          "description": "enable exprerimentals features"
-        },
-        "EpiHeader.old": {
-          "type": "boolean",
-          "description": "Use old Header when exprimental is enabled"
-        }
-      }
+    "name": "epiheader",
+    "displayName": "EpiHeader",
+    "description": "Header Epitech for VSCode",
+    "version": "0.1.0",
+    "publisher": "ben",
+    "icon": "epitech_logo.png",
+    "engines": {
+        "vscode": "^1.10.0"
     },
-    "commands": [
-      {
-        "command": "epiheader.addHeader",
-        "title": "Ajouter EpiHeader",
-        "when": "editorTextFocus"
-      }
+    "categories": [
+        "Other"
     ],
-    "keybindings": [
-      {
-        "command": "epiheader.addHeader",
-        "key": "ctrl+alt+h",
-        "mac": "cmd+alt+h",
-        "when": "editorTextFocus"
-      }
-    ]
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0",
-    "mocha": "^2.3.3",
-    "eslint": "^3.6.0",
-    "@types/node": "^6.0.40",
-    "@types/mocha": "^2.2.32"
-  },
-  "dependencies": {
-    "moment": "^2.19.1"
-  }
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./src/epiheader.js",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "EpiHeader.name": {
+                    "type": "string",
+                    "description": "Ton nom (Xxxxxx Zzzzzz)"
+                },
+                "EpiHeader.email": {
+                    "type": "string",
+                    "description": "Ton email (xxxxx.zzzzz@epitech.eu)"
+                },
+                "EpiHeader.experimental": {
+                    "type": "boolean",
+                    "description": "enable exprerimentals features"
+                },
+                "EpiHeader.old": {
+                    "type": "boolean",
+                    "description": "Use old Header when exprimental is enabled"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "epiheader.addHeader",
+                "title": "Ajouter EpiHeader",
+                "when": "editorTextFocus"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "epiheader.addHeader",
+                "key": "ctrl+alt+h",
+                "mac": "cmd+alt+h",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "eslint": "^3.6.0",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "moment": "^2.19.1"
+    }
 }
