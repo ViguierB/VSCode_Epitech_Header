@@ -12,3 +12,7 @@ Avec ça tu vas pouvoir... euhhh uai non oublie, tu pourras juste mettre ton hea
 
 * `EpiHeader.name`: Ton nom... logique
 * `EpiHeader.email`: J'ai vraiment besoin de te le dire ??
+
+## ToDo
+
+* Prendre en charge le la modification de la descripton du fichier avec le nouveau Header. 

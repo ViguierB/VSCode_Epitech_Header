@@ -50,6 +50,6 @@ module.exports = {
         return (languageDemiliters[languageId]);
     },
     isSupported: (languageId) => {
-        return (typeof languageDemiliters === 'undefined') ? false : true;
+        return (typeof languageDemiliters !== 'undefined');
     }
 };

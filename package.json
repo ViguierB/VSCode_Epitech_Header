@@ -2,7 +2,7 @@
   "name": "epiheader",
   "displayName": "EpiHeader",
   "description": "Header Epitech for VSCode",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "ben",
   "icon": "epitech_logo.png",
   "engines": {
@@ -25,6 +25,14 @@
         "EpiHeader.email": {
           "type": "string",
           "description": "Ton email (xxxxx.zzzzz@epitech.eu)"
+        },
+        "EpiHeader.experimental": {
+          "type": "boolean",
+          "description": "enable exprerimentals features"
+        },
+        "EpiHeader.old": {
+          "type": "boolean",
+          "description": "Use old Header when exprimental is enabled"
         }
       }
     },

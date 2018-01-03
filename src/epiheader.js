@@ -5,7 +5,7 @@ var engine = require('./engine.js');
 var updateHeader = (evt) => {
     var document = evt.document;
     var extracted = engine.extractEpiHeader(document.getText(), delims.getDelim(document.languageId));
-    
+    console.log(extracted);
     evt.waitUntil(
         Promise.resolve(
             extracted && delims.isSupported(document.languageId) ? [
@@ -13,7 +13,6 @@ var updateHeader = (evt) => {
             ] : []
         )
     );
-    
 };
 
 var addHeader = () => {
